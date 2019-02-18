@@ -11,9 +11,9 @@ let package = Package(
             name: "StreamScanner", targets: ["StreamScanner"])
     ],
     targets: [
-        .target(name: "StreamScanner")
-        .testTarget(name: "StreamScanner", dependencies: ["StreamScanner"])
+        .target(name: "StreamScanner", path: "StreamScanner"),
+        .testTarget(name: "StreamScannerTests", dependencies: ["StreamScanner"], path: "StreamScannerTest")
     ],
-    swiftLanguageVersions: [4]
+    swiftLanguageVersions: [.v4_2]
 )
 
