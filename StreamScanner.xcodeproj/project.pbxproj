@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0BB6B9C523612763004AA8FF /* LinuxMain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BB6B9C423612763004AA8FF /* LinuxMain.swift */; };
 		927704B11B3D071800631755 /* StreamScanner.h in Headers */ = {isa = PBXBuildFile; fileRef = 927704B01B3D071800631755 /* StreamScanner.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		927704B81B3D071800631755 /* StreamScanner.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 927704AD1B3D071800631755 /* StreamScanner.framework */; };
 		927704BD1B3D071800631755 /* StreamScannerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 927704BC1B3D071800631755 /* StreamScannerTests.swift */; };
@@ -34,6 +35,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0BB6B9C423612763004AA8FF /* LinuxMain.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LinuxMain.swift; sourceTree = SOURCE_ROOT; };
 		927704AD1B3D071800631755 /* StreamScanner.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = StreamScanner.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		927704B01B3D071800631755 /* StreamScanner.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = StreamScanner.h; sourceTree = "<group>"; };
 		927704B21B3D071800631755 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -117,6 +119,7 @@
 		92EF7A5F1B409FC1007CEEA1 /* StreamScannerTest */ = {
 			isa = PBXGroup;
 			children = (
+				0BB6B9C423612763004AA8FF /* LinuxMain.swift */,
 				92AD6AA31B40622A0038DAF6 /* main.swift */,
 				92EF7A671B409FC1007CEEA1 /* Info.plist */,
 			);
@@ -218,6 +221,7 @@
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
+				English,
 				en,
 				Base,
 			);
@@ -273,6 +277,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				92EF7A6D1B40A063007CEEA1 /* main.swift in Sources */,
+				0BB6B9C523612763004AA8FF /* LinuxMain.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -343,6 +348,7 @@
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = macosx;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
 			};
@@ -392,6 +398,7 @@
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = macosx;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_VERSION = 5.0;
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
 			};
@@ -415,7 +422,7 @@
 				SKIP_INSTALL = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_SWIFT3_OBJC_INFERENCE = Off;
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 			};
 			name = Debug;
 		};
@@ -436,7 +443,7 @@
 				PRODUCT_NAME = StreamScanner;
 				SKIP_INSTALL = YES;
 				SWIFT_SWIFT3_OBJC_INFERENCE = Off;
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 			};
 			name = Release;
 		};
@@ -448,7 +455,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = in.shoumikh.StreamScannerTests;
 				PRODUCT_NAME = StreamScannerTests;
-				SWIFT_VERSION = 3.0;
+				SWIFT_VERSION = 5.0;
 			};
 			name = Debug;
 		};
@@ -460,7 +467,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = in.shoumikh.StreamScannerTests;
 				PRODUCT_NAME = StreamScannerTests;
-				SWIFT_VERSION = 3.0;
+				SWIFT_VERSION = 5.0;
 			};
 			name = Release;
 		};
@@ -475,7 +482,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = in.shoumikh.StreamScannerTest;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_SWIFT3_OBJC_INFERENCE = Off;
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 			};
 			name = Debug;
 		};
@@ -490,7 +497,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = in.shoumikh.StreamScannerTest;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_SWIFT3_OBJC_INFERENCE = Off;
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 			};
 			name = Release;
 		};
