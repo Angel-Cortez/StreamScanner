@@ -53,7 +53,11 @@ public final class StreamScanner : IteratorProtocol, Sequence {
 
   public func read<T: Scannable>() -> T? {
     if ready() {
+        #if os(Linux)
+        var token: String?
+        #else
         var token: NSString?
+        #endif
 
       // Grab the next valid characters into token.
       if buffer?.scanUpToCharacters(from: delimiters, into: &token) ?? false,
