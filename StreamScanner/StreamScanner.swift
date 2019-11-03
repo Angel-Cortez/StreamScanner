@@ -34,8 +34,15 @@ public final class StreamScanner : IteratorProtocol, Sequence {
 
   public func ready() -> Bool {
     if buffer?.isAtEnd ?? true {
-      // Init or append the buffer.
-      let availableData = source.availableData
+        // Init or append the buffer.
+        #if os(Linux)
+        // There is an issue with Swift Linux Foundation, were the availableData always returns buffer of size st_blksize (4096), unlike Darwin implementation that returns st_size (size of the file) for large files
+        // Waiting for TODO to be implmeneted
+        // https://github.com/spevans/swift-corelibs-foundation/blob/d58337726234323e6a96ca8c0e69056035793240/Foundation/FileHandle.swift#L70
+        let availableData = source.readData(ofLength: Int.max)
+        #else
+        let availableData = source.availableData
+        #endif
       if availableData.count > 0,
           let nextInput = String(data: availableData, encoding: .utf8) {
         buffer = Scanner(string: nextInput)
@@ -46,11 +53,8 @@ public final class StreamScanner : IteratorProtocol, Sequence {
 
   public func read<T: Scannable>() -> T? {
     if ready() {
-        #if os(Linux)
-        var token: String?
-        #else
         var token: NSString?
-        #endif
+
       // Grab the next valid characters into token.
       if buffer?.scanUpToCharacters(from: delimiters, into: &token) ?? false,
           let token = token as String? {
