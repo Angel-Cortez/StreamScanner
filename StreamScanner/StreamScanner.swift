@@ -19,9 +19,10 @@ public final class StreamScanner : IteratorProtocol, Sequence {
 
   public static let standardInput = StreamScanner(source: FileHandle.standardInput)
 
-  public init(source: FileHandle, delimiters: CharacterSet = CharacterSet.whitespacesAndNewlines) {
+    public init(source: FileHandle, delimiters: CharacterSet = CharacterSet.whitespacesAndNewlines, encoding: String.Encoding = .utf8) {
     self.source = source
     self.delimiters = delimiters
+    self.encoding = encoding
   }
 
   public func next() -> String? {
@@ -44,7 +45,7 @@ public final class StreamScanner : IteratorProtocol, Sequence {
         let availableData = source.availableData
         #endif
       if availableData.count > 0,
-          let nextInput = String(data: availableData, encoding: .utf8) {
+        let nextInput = String(data: availableData, encoding: encoding) {
         buffer = Scanner(string: nextInput)
       }
     }
@@ -76,6 +77,7 @@ public final class StreamScanner : IteratorProtocol, Sequence {
   fileprivate let source: FileHandle
   fileprivate let delimiters: CharacterSet
   fileprivate var buffer: Scanner?
+  fileprivate let encoding: String.Encoding
 
   fileprivate func convert<T: Scannable>(_ token: String) -> T? {
     let scanner = Scanner(string: token)
